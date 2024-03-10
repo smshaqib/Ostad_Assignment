@@ -26,5 +26,5 @@ class Song extends Media{
   void play(){
     print("Playing song by $artist...");
   }
-  
+
 }
