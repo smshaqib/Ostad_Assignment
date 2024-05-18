@@ -24,7 +24,7 @@ class SideBySidePage extends StatefulWidget {
 }
 
 class _SideBySidePageState extends State<SideBySidePage> {
-  int quantity = 0;
+  int quantity = 0, quantity2 = 0, quantity3 =0;
 
   void _incrementQuantity() {
     setState(() {
@@ -40,6 +40,39 @@ class _SideBySidePageState extends State<SideBySidePage> {
     });
   }
 
+
+
+  void _incrementQuantity2() {
+    setState(() {
+      quantity2++;
+    });
+  }
+
+  void _decrementQuantity2() {
+    setState(() {
+      if (quantity > 0) {
+        quantity2--;
+      }
+    });
+  }
+
+
+
+  void _incrementQuantity3() {
+    setState(() {
+      quantity3++;
+    });
+  }
+
+  void _decrementQuantity3() {
+    setState(() {
+      if (quantity > 0) {
+        quantity3--;
+      }
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,78 +81,253 @@ class _SideBySidePageState extends State<SideBySidePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Row(
+        child: Column(
           children: [
-            Expanded(
-              flex: 1,
-              child: AspectRatio(
-                aspectRatio: 1, // Aspect ratio of 1:1
-                child: Container(
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    image: DecorationImage(
-                      image: NetworkImage(
-                        'https://via.placeholder.com/150', // Smaller image URL
+            Container(
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: AspectRatio(
+                      aspectRatio: 1, // Aspect ratio of 1:1
+                      child: Container(
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              'https://via.placeholder.com/150', // Smaller image URL
+                            ),
+                            fit: BoxFit.cover, // Adjusted fit to cover the entire container
+                          ),
+                        ),
                       ),
-                      fit: BoxFit.cover, // Adjusted fit to cover the entire container
                     ),
                   ),
-                ),
-              ),
-            ),
-            SizedBox(width: 16),
-            Expanded(
-              flex: 2, // Adjusted flex value for larger container
-              child: Container(
 
-                width: 10,
-                height: 120,
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ElevatedButton(
-                          onPressed: _decrementQuantity,
-                          child: Icon(Icons.remove),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            shape: CircleBorder(),
-                            padding: EdgeInsets.all(16),
-                            
+                  Expanded(
+                    flex: 2, // Adjusted flex value for larger container
+                    child: Container(
+
+                      width: 10,
+                      height: 120,
+                      padding: EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              ElevatedButton(
+                                onPressed: _decrementQuantity,
+                                child: Icon(Icons.remove),
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.white,
+                                    shape: CircleBorder(),
+                                    padding: EdgeInsets.all(5),
+                                    minimumSize: Size(5, 5)
+
+                                ),
+                              ),
+                              Text(
+                                '$quantity',
+                                style: TextStyle(
+                                  fontSize: 48,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: _incrementQuantity,
+                                child: Icon(Icons.add),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  shape: CircleBorder(),
+                                  padding: EdgeInsets.all(5),
+                                    minimumSize: Size(5, 5)
+
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        Text(
-                          '$quantity',
-                          style: TextStyle(
-                            fontSize: 48,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        ElevatedButton(
-                          onPressed: _incrementQuantity,
-                          child: Icon(Icons.add),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            shape: CircleBorder(),
-                            padding: EdgeInsets.all(16),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
+
             ),
+
+            SizedBox(
+              height: 20,
+            ),
+
+            Container(
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: AspectRatio(
+                      aspectRatio: 1, // Aspect ratio of 1:1
+                      child: Container(
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              'https://via.placeholder.com/150', // Smaller image URL
+                            ),
+                            fit: BoxFit.cover, // Adjusted fit to cover the entire container
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  Expanded(
+                    flex: 2, // Adjusted flex value for larger container
+                    child: Container(
+
+                      width: 10,
+                      height: 120,
+                      padding: EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              ElevatedButton(
+                                onPressed: _decrementQuantity2,
+                                child: Icon(Icons.remove),
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.white,
+                                    shape: CircleBorder(),
+                                    padding: EdgeInsets.all(5),
+                                    minimumSize: Size(5,5)
+
+                                ),
+                              ),
+                              Text(
+                                '$quantity2',
+                                style: TextStyle(
+                                  fontSize: 48,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: _incrementQuantity2,
+                                child: Icon(Icons.add),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  shape: CircleBorder(),
+                                  padding: EdgeInsets.all(5),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+            ),
+
+            SizedBox(
+              height: 20,
+            ),
+
+            Container(
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: AspectRatio(
+                      aspectRatio: 1, // Aspect ratio of 1:1
+                      child: Container(
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              'https://via.placeholder.com/150', // Smaller image URL
+                            ),
+                            fit: BoxFit.cover, // Adjusted fit to cover the entire container
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  Expanded(
+                    flex: 2, // Adjusted flex value for larger container
+                    child: Container(
+
+                      width: 10,
+                      height: 120,
+                      padding: EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              ElevatedButton(
+                                onPressed: _decrementQuantity3,
+                                child: Icon(Icons.remove),
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.white,
+                                    shape: CircleBorder(),
+                                    padding: EdgeInsets.all(5),
+                                    minimumSize: Size(5,5)
+
+                                ),
+                              ),
+                              Text(
+                                '$quantity3',
+                                style: TextStyle(
+                                  fontSize: 48,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: _incrementQuantity3,
+                                child: Icon(Icons.add),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  shape: CircleBorder(),
+                                  padding: EdgeInsets.all(5),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+            ),
+
+
           ],
         ),
+
       ),
     );
   }
