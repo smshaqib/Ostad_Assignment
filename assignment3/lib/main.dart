@@ -8,10 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My Bag',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+
+
+
       debugShowCheckedModeBanner: false,
       home: SideBySidePage(),
     );
@@ -50,7 +49,7 @@ class _SideBySidePageState extends State<SideBySidePage> {
 
   void _decrementQuantity2() {
     setState(() {
-      if (quantity > 0) {
+      if (quantity2 > 0) {
         quantity2--;
       }
     });
@@ -66,7 +65,7 @@ class _SideBySidePageState extends State<SideBySidePage> {
 
   void _decrementQuantity3() {
     setState(() {
-      if (quantity > 0) {
+      if (quantity3 > 0) {
         quantity3--;
       }
     });
@@ -77,12 +76,13 @@ class _SideBySidePageState extends State<SideBySidePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Side by Side Layout'),
+        title: Text('My Bag'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+
             Container(
               child: Row(
                 children: [
@@ -96,7 +96,7 @@ class _SideBySidePageState extends State<SideBySidePage> {
 
                           image: DecorationImage(
                             image: NetworkImage(
-                              'https://via.placeholder.com/150', // Smaller image URL
+                              'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/150', // Smaller image URL
                             ),
                             fit: BoxFit.cover, // Adjusted fit to cover the entire container
                           ),
@@ -179,7 +179,7 @@ class _SideBySidePageState extends State<SideBySidePage> {
 
                           image: DecorationImage(
                             image: NetworkImage(
-                              'https://via.placeholder.com/150', // Smaller image URL
+                              'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=962&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/150', // Smaller image URL
                             ),
                             fit: BoxFit.cover, // Adjusted fit to cover the entire container
                           ),
@@ -260,7 +260,7 @@ class _SideBySidePageState extends State<SideBySidePage> {
 
                           image: DecorationImage(
                             image: NetworkImage(
-                              'https://via.placeholder.com/150', // Smaller image URL
+                              'https://images.unsplash.com/photo-1565299507177-b0ac66763828?q=80&w=844&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/150', // Smaller image URL
                             ),
                             fit: BoxFit.cover, // Adjusted fit to cover the entire container
                           ),
