@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -77,7 +78,7 @@ class _SideBySidePageState extends State<SideBySidePage> {
   @override
   Widget build(BuildContext context) {
 
-    int ans = quantity + quantity2 + quantity3;
+    int ans = quantity*20 + quantity2*10 + quantity3*5;
 
 
     return Scaffold(
@@ -123,11 +124,26 @@ class _SideBySidePageState extends State<SideBySidePage> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
+
+
+
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+
+
                         children: [
+
+
+
+                          Text('Salad', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),),
+
+
+
+                          Text('Color: Green, Size 36',),
+
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
+
                               ElevatedButton(
                                 onPressed: _decrementQuantity,
                                 child: Icon(Icons.remove),
@@ -135,28 +151,33 @@ class _SideBySidePageState extends State<SideBySidePage> {
                                     backgroundColor: Colors.white,
                                     shape: CircleBorder(),
                                     padding: EdgeInsets.all(5),
-                                    minimumSize: Size(5, 5)
+                                    minimumSize: Size(5,5)
 
                                 ),
                               ),
                               Text(
                                 '$quantity',
                                 style: TextStyle(
-                                  fontSize: 48,
-                                  fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold
                                 ),
                               ),
+
                               ElevatedButton(
                                 onPressed: _incrementQuantity,
                                 child: Icon(Icons.add),
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.white,
-                                  shape: CircleBorder(),
-                                  padding: EdgeInsets.all(5),
-                                    minimumSize: Size(5, 5)
+                                    backgroundColor: Colors.white,
+                                    shape: CircleBorder(),
+                                    padding: EdgeInsets.all(5),
+                                    minimumSize: Size(5,5)
 
                                 ),
                               ),
+
+                              SizedBox(width: 70,),
+
+                              Text('20\$',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
                             ],
                           ),
                         ],
@@ -206,11 +227,26 @@ class _SideBySidePageState extends State<SideBySidePage> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
+
+
+
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+
+
                         children: [
+
+
+
+                          Text('Pizza', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),),
+
+
+
+                          Text('Color: Yellow, Size 12',),
+
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
+
                               ElevatedButton(
                                 onPressed: _decrementQuantity2,
                                 child: Icon(Icons.remove),
@@ -225,19 +261,26 @@ class _SideBySidePageState extends State<SideBySidePage> {
                               Text(
                                 '$quantity2',
                                 style: TextStyle(
-                                  fontSize: 48,
-                                  fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold
                                 ),
                               ),
+
                               ElevatedButton(
                                 onPressed: _incrementQuantity2,
                                 child: Icon(Icons.add),
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.white,
-                                  shape: CircleBorder(),
-                                  padding: EdgeInsets.all(5),
+                                    backgroundColor: Colors.white,
+                                    shape: CircleBorder(),
+                                    padding: EdgeInsets.all(5),
+                                    minimumSize: Size(5,5)
+
                                 ),
                               ),
+
+                              SizedBox(width: 70,),
+
+                              Text('10\$',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
                             ],
                           ),
                         ],
@@ -287,11 +330,26 @@ class _SideBySidePageState extends State<SideBySidePage> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        
+                        
+
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+
+
                         children: [
+
+
+                          
+                          Text('Burger', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),),
+
+
+                          
+                          Text('Color: Red, Size 12',),
+
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
+
                               ElevatedButton(
                                 onPressed: _decrementQuantity3,
                                 child: Icon(Icons.remove),
@@ -306,19 +364,26 @@ class _SideBySidePageState extends State<SideBySidePage> {
                               Text(
                                 '$quantity3',
                                 style: TextStyle(
-                                  fontSize: 48,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold
                                 ),
                               ),
+
                               ElevatedButton(
                                 onPressed: _incrementQuantity3,
                                 child: Icon(Icons.add),
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.white,
-                                  shape: CircleBorder(),
-                                  padding: EdgeInsets.all(5),
+                                    backgroundColor: Colors.white,
+                                    shape: CircleBorder(),
+                                    padding: EdgeInsets.all(5),
+                                    minimumSize: Size(5,5)
+
                                 ),
                               ),
+
+                              SizedBox(width: 70,),
+
+                              Text('5\$',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
                             ],
                           ),
                         ],
@@ -344,15 +409,14 @@ class _SideBySidePageState extends State<SideBySidePage> {
                   ),
                 ),
 
-                SizedBox(width: 200,),
+                SizedBox(width: 185,),
 
                 Text(
 
-
-                  '$ans',
+                  '$ans\$',
                   style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
                   ),
                 ),
               ],
@@ -364,8 +428,8 @@ class _SideBySidePageState extends State<SideBySidePage> {
                 onPressed: (){
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('Congratulations! You pressed the button.'),
-                      duration: Duration(seconds: 3), // Duration for which snackbar will be visible
+                      content: Text('Congratulations! You have Purchased!'),
+                      duration: Duration(seconds: 1), // Duration for which snackbar will be visible
                     ),
                   );
                 },
