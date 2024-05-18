@@ -25,6 +25,8 @@ class SideBySidePage extends StatefulWidget {
 class _SideBySidePageState extends State<SideBySidePage> {
   int quantity = 0, quantity2 = 0, quantity3 =0;
 
+
+
   void _incrementQuantity() {
     setState(() {
       quantity++;
@@ -74,6 +76,10 @@ class _SideBySidePageState extends State<SideBySidePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    int ans = quantity + quantity2 + quantity3;
+
+
     return Scaffold(
       appBar: AppBar(
         title: Text('My Bag'),
@@ -301,7 +307,7 @@ class _SideBySidePageState extends State<SideBySidePage> {
                                 '$quantity3',
                                 style: TextStyle(
                                   fontSize: 48,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.bold
                                 ),
                               ),
                               ElevatedButton(
@@ -324,7 +330,53 @@ class _SideBySidePageState extends State<SideBySidePage> {
 
             ),
 
+            SizedBox(
+              height: 160,
+            ),
+            
+            Row(
+              
+              children: [
+                Text('Total Amount: ',
+                  style: TextStyle(
+                      fontSize: 16 ,
+                      fontWeight: FontWeight.bold
+                  ),
+                ),
 
+                SizedBox(width: 200,),
+
+                Text(
+
+
+                  '$ans',
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold
+                  ),
+                ),
+              ],
+            ),
+
+            ElevatedButton(
+
+
+                onPressed: (){
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Congratulations! You pressed the button.'),
+                      duration: Duration(seconds: 3), // Duration for which snackbar will be visible
+                    ),
+                  );
+                },
+
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 130, vertical: 10),
+                  backgroundColor: Colors.red,// Adjust padding as needed
+                ),
+                child: Text('CHECK OUT',style: TextStyle(color: Colors.white),),
+
+            )
           ],
         ),
 
