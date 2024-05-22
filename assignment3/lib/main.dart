@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +46,7 @@ class _SideBySidePageState extends State<SideBySidePage> {
           builder: (BuildContext context) {
             return AlertDialog(
               title: const Center(child: Text('Congratulations!',style: TextStyle(fontWeight: FontWeight.bold),)),
-              content: const Text('You Have Added 5 item of the Menue!'),
+              content: const Text('You Have Added 5 item of the Menu!'),
               actions: <Widget>[
                 TextButton(
                     onPressed: () {
