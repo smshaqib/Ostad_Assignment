@@ -10,7 +10,8 @@ class PhotoDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(photo.title),
+        backgroundColor: Colors.blue,
+        title: Text("Photo Details",style: TextStyle(color: Colors.white),),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

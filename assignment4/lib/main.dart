@@ -9,6 +9,8 @@ class PhotoGalleryApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      debugShowCheckedModeBanner: false,
       title: 'Photo Gallery App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -23,7 +25,8 @@ class PhotoListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Photo Gallery App'),
+        backgroundColor: Colors.blue,
+        title: Text('Photo Gallery App',style: TextStyle(color: Colors.white),),
       ),
       body: FutureBuilder<List<Photo>>(
         future: PhotoService.fetchPhotos(),
