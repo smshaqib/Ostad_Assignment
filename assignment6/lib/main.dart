@@ -82,14 +82,20 @@ class _ContactListPageState extends State<ContactListPage> {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: _nameController,
-              decoration: InputDecoration(labelText: 'Name'),
+              decoration: InputDecoration(
+                labelText: 'Name',
+                border: OutlineInputBorder(),
+              ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: _numberController,
-              decoration: InputDecoration(labelText: 'Number'),
+              decoration: InputDecoration(
+                labelText: 'Number',
+                border: OutlineInputBorder(),
+              ),
             ),
           ),
           ElevatedButton(
@@ -100,10 +106,26 @@ class _ContactListPageState extends State<ContactListPage> {
             child: ListView.builder(
               itemCount: _contacts.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(_contacts[index]['name']!),
-                  subtitle: Text(_contacts[index]['number']!),
-                  onLongPress: () => _deleteContact(index),
+                return Card(
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.account_circle,
+                      size: 40.0,
+                      color: Colors.brown,
+                    ),
+                    title: Text(
+                      _contacts[index]['name']!,
+                      style: TextStyle(
+                        color: index % 2 == 0 ? Colors.red : Colors.black,
+                      ),
+                    ),
+                    subtitle: Text(_contacts[index]['number']!),
+                    trailing: Icon(
+                      Icons.call,
+                      color: Colors.blue,
+                    ),
+                    onLongPress: () => _deleteContact(index),
+                  ),
                 );
               },
             ),
