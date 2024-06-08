@@ -46,17 +46,19 @@ class _ContactListPageState extends State<ContactListPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Delete Contact'),
-          content: Text('Are you sure you want to delete this contact?'),
+          title: Text('Confirmation'),
+          content: Text('Are you sure for Delete?'),
           actions: <Widget>[
-            TextButton(
-              child: Text('Cancel'),
+            IconButton(
+              icon: Icon(Icons.cancel),
+              color: Colors.blue,
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
-            TextButton(
-              child: Text('Delete'),
+            IconButton(
+              icon: Icon(Icons.delete),
+              color: Colors.blue,
               onPressed: () {
                 setState(() {
                   _contacts.removeAt(index);
