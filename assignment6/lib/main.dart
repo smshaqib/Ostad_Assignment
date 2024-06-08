@@ -79,6 +79,7 @@ class _ContactListPageState extends State<ContactListPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Contact List'),
+        backgroundColor: Colors.blueGrey,
       ),
       body: Column(
         children: <Widget>[
@@ -102,9 +103,23 @@ class _ContactListPageState extends State<ContactListPage> {
               ),
             ),
           ),
-          ElevatedButton(
-            onPressed: _addContact,
-            child: Text('Add'),
+          SizedBox(
+            width: 390,
+            height: 50.0,
+            child: ElevatedButton(
+              onPressed: _addContact,
+              child: Text('Add',),
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white, backgroundColor: Colors.blueGrey, // Text color
+              ),
+            ),
+          ),
+
+          SizedBox(
+
+            height: 30,
+
+
           ),
           Expanded(
             child: ListView.builder(
@@ -120,7 +135,7 @@ class _ContactListPageState extends State<ContactListPage> {
                     title: Text(
                       _contacts[index]['name']!,
                       style: TextStyle(
-                        color: index % 2 == 0 ? Colors.red : Colors.black,
+                        color: Colors.red ,
                       ),
                     ),
                     subtitle: Text(_contacts[index]['number']!),
