@@ -78,7 +78,15 @@ class _ContactListPageState extends State<ContactListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contact List'),
+        title: Center(
+          child: Text('Contact List',
+
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold
+            ),
+          ),
+        ),
         backgroundColor: Colors.blueGrey,
       ),
       body: Column(
